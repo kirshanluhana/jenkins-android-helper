@@ -102,6 +102,7 @@ OPTIONS:
   -r "<screen resolution>"     The resolution to use on emulator start
   -l "<language>"              Set the properties persist.sys.language and persist.sys.country given of a locale in form of eg en_US
   -c "<emulator cli opts>"     Set additional CLI parameters for the emulator call
+  
 EOOPTS
 	exit 1
 }
@@ -170,7 +171,7 @@ android_emulator_start_emulator() {
 	${ANDROID_SDK_TOOLS_BIN_EMULATOR} -avd "${ANDROID_AVD_NAME}" \
 			-skin "${ANDROID_EMULATOR_SCREEN_RESOLUTION}" \
 			-prop persist.sys.language=${ANDROID_DEVICE_LANG} -prop persist.sys.country=${ANDROID_DEVICE_COUNTRY} \
-			-wipe-data -no-window -no-boot-anim \
+			\
 			${ANDROID_EMULATOR_START_CLI_OPTS} &
 }
 
